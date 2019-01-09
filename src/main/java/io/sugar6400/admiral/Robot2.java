@@ -1,3 +1,4 @@
+package java.io.sugar6400.admiral;
 // ｢海ゲーム｣クライアントプログラムRobot.java
 // このプログラムは,海ゲームのクライアントプログラムです
 // 決められた手順で海ゲームをプレイします
@@ -20,22 +21,25 @@ import java.util.*;
 public class Robot2 {
 	enum Dir{RIGHT, DOWN, LEFT, UP, NONE}
 	// ロボットの動作タイミングを規定する変数sleeptime
-	int sleeptime = 510;
+	private int sleeptime = 510;
 	// ロボットがlogoutするまでの時間を規定する変数timeTolive
 	int timeTolive = 50 ;
 
-	String name;
+	private String name;
 	// 次の更新時の移動
-	Dir[] nextMove = new Dir[2];
-	int my_x, my_y;
+	private Dir[] nextMove = new Dir[2];
+	private int my_x, my_y;
 
-	static Vector<int[]> energy_v; // 燃料タンクの位置情報リスト
-	static Hashtable<String, Ship> userTable = null;
+	private static Vector<int[]> energy_v; // 燃料タンクの位置情報リスト
+	private static Hashtable<String, Ship> userTable = null;
+	private Admiral admiral;
+
 	// コンストラクタ
 	public Robot2 (String[] args)
 	{
 		userTable = new Hashtable<>();
 		energy_v = new Vector<>();
+		admiral = new Admiral();
 		nextMove[0] = Dir.NONE;
 		nextMove[1] = Dir.NONE;
 		login(args[0],args[1]) ;
@@ -54,25 +58,53 @@ public class Robot2 {
 	public void Update(){
 		try{
 			Reload();
-			// 距離重み付けエネルギー量順にソート
-			energy_v.sort(new Comparator<int[]>() {
-				@Override
-				public int compare(int[] o1, int[] o2) {
-					return Integer.compare(o1[3], o2[3]);
-				}
-			});
-			/* デバッグ出力用
-			for (int[] energy: energy_v){
-				System.out.print(energy[3]+",");
-			}*/
-			nextMove[0] = Dir.NONE;
-			nextMove[1] = Dir.NONE;
+			int action = admiral.DecideMove(energy_v, userTable);
+			nextMove = Action2Move(action);
 		}catch(Exception e){
 			e.printStackTrace();
 			System.exit(1);
 		}
 	}
 
+	private Dir[] Action2Move(int action){
+		switch(action) {
+			case 0:
+				return new Dir[]{Dir.RIGHT, Dir.RIGHT};
+			case 1:
+				return new Dir[]{Dir.RIGHT, Dir.DOWN};
+			case 2:
+				return new Dir[]{Dir.RIGHT, Dir.LEFT};
+			case 3:
+				return new Dir[]{Dir.RIGHT, Dir.UP};
+			case 4:
+				return new Dir[]{Dir.DOWN, Dir.RIGHT};
+			case 5:
+				return new Dir[]{Dir.DOWN, Dir.DOWN};
+			case 6:
+				return new Dir[]{Dir.DOWN, Dir.LEFT};
+			case 7:
+				return new Dir[]{Dir.DOWN, Dir.UP};
+			case 8:
+				return new Dir[]{Dir.LEFT, Dir.RIGHT};
+			case 9:
+				return new Dir[]{Dir.LEFT, Dir.DOWN};
+			case 10:
+				return new Dir[]{Dir.LEFT, Dir.LEFT};
+			case 11:
+				return new Dir[]{Dir.LEFT, Dir.UP};
+			case 12:
+				return new Dir[]{Dir.UP, Dir.RIGHT};
+			case 13:
+				return new Dir[]{Dir.UP, Dir.DOWN};
+			case 14:
+				return new Dir[]{Dir.UP, Dir.LEFT};
+			case 15:
+				return new Dir[]{Dir.UP, Dir.UP};
+			default:
+				System.out.println("Error: 不正なaction: " + action);
+				return null;
+		}
+	}
 
 	private void Move(Dir dir){
 		switch (dir){
@@ -198,23 +230,6 @@ public class Robot2 {
 		}
 	}
 
-	void logout(){
-		try {
-			// logout処理
-			out.println("logout") ;
-			out.flush();
-			server.close();
-		}catch(Exception e){
-			e.printStackTrace();
-			System.exit(1);
-		}
-	}
-
-	// mainメソッド
-	// Robotを起動します
-	public static void main(String[] args){
-		new Robot2(args);
-	}
 }
 
 class Ship {
