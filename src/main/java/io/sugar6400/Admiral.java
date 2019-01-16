@@ -71,7 +71,6 @@ public class Admiral {
         return Nd4j.argMax(output).getInt(0);
     }
 
-    // TODO: XとYが逆転している可能性あり
     private void Mapping(Vector<int[]> energy_v, Hashtable<String, Ship> userTable){
         shipMap = Nd4j.zeros(256, 256);
         tankMap = Nd4j.zeros(256, 256);
