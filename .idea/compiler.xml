@@ -9,5 +9,9 @@
         <module name="admiral_java" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="admiral_java" target="1.8" />
+      <module name="maven-archiver" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>

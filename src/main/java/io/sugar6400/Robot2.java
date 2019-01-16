@@ -1,40 +1,40 @@
 package io.sugar6400;
-// ¢ŠCƒQ[ƒ€£ƒNƒ‰ƒCƒAƒ“ƒgƒvƒƒOƒ‰ƒ€Robot.java
-// ‚±‚ÌƒvƒƒOƒ‰ƒ€‚Í,ŠCƒQ[ƒ€‚ÌƒNƒ‰ƒCƒAƒ“ƒgƒvƒƒOƒ‰ƒ€‚Å‚·
-// Œˆ‚ß‚ç‚ê‚½è‡‚ÅŠCƒQ[ƒ€‚ğƒvƒŒƒC‚µ‚Ü‚·
-// g‚¢•ûjava Robot Ú‘±æƒT[ƒoƒAƒhƒŒƒXƒQ[ƒ€Q‰ÁÒ–¼
-// ‹N“®Œã,w’è‚µ‚½ƒT[ƒo‚ÆÚ‘±‚µ,©“®“I‚ÉƒQ[ƒ€‚ğs‚¢‚Ü‚·
-// ‹N“®Œã,w’è‰ñ”‚ÌŒJ‚è•Ô‚µ‚ÌŒã,logout‚µ‚Ü‚·
-// ‚±‚ÌƒvƒƒOƒ‰ƒ€‚ÍlogoutƒRƒ}ƒ“ƒh‚ª‚ ‚è‚Ü‚¹‚ñ
-// ƒvƒƒOƒ‰ƒ€‚ğ“r’†‚Å’â~‚·‚é‚É‚Í,ˆÈ‰º‚Ìè‡‚ğ“¥‚ñ‚Å‚­‚¾‚³‚¢
-// i‚PjƒRƒ“ƒgƒ[ƒ‹C ‚ğ“ü—Í‚µ‚ÄRobotƒvƒƒOƒ‰ƒ€‚ğ’â~‚µ‚Ü‚·
-// i‚QjT1.javaƒvƒƒOƒ‰ƒ€‚È‚Ç,•Ê‚ÌƒNƒ‰ƒCƒAƒ“ƒg‚ğg‚Á‚ÄRobot‚Æ“¯‚¶–¼‘O‚Ålogin‚µ‚Ü‚·
-// i‚Rjlogout‚µ‚Ü‚·
-// •ÊƒNƒ‰ƒCƒAƒ“ƒg‚©‚ç‚Ìlogoutì‹Æ‚ğÈ—ª‚·‚é‚Æ,ƒT[ƒoã‚Éî•ñ‚ªc‚Á‚Ä‚µ‚Ü‚¢‚Ü‚·
+// ï½¢æµ·ã‚²ãƒ¼ãƒ ï½£ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãƒ—ãƒ­ã‚°ãƒ©ãƒ Robot.java
+// ã“ã®ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã¯,æµ·ã‚²ãƒ¼ãƒ ã®ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãƒ—ãƒ­ã‚°ãƒ©ãƒ ã§ã™
+// æ±ºã‚ã‚‰ã‚ŒãŸæ‰‹é †ã§æµ·ã‚²ãƒ¼ãƒ ã‚’ãƒ—ãƒ¬ã‚¤ã—ã¾ã™
+// ä½¿ã„æ–¹java Robot æ¥ç¶šå…ˆã‚µãƒ¼ãƒã‚¢ãƒ‰ãƒ¬ã‚¹ã‚²ãƒ¼ãƒ å‚åŠ è€…å
+// èµ·å‹•å¾Œ,æŒ‡å®šã—ãŸã‚µãƒ¼ãƒã¨æ¥ç¶šã—,è‡ªå‹•çš„ã«ã‚²ãƒ¼ãƒ ã‚’è¡Œã„ã¾ã™
+// èµ·å‹•å¾Œ,æŒ‡å®šå›æ•°ã®ç¹°ã‚Šè¿”ã—ã®å¾Œ,logoutã—ã¾ã™
+// ã“ã®ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã¯logoutã‚³ãƒãƒ³ãƒ‰ãŒã‚ã‚Šã¾ã›ã‚“
+// ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’é€”ä¸­ã§åœæ­¢ã™ã‚‹ã«ã¯,ä»¥ä¸‹ã®æ‰‹é †ã‚’è¸ã‚“ã§ãã ã•ã„
+// ï¼ˆï¼‘ï¼‰ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«C ã‚’å…¥åŠ›ã—ã¦Robotãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’åœæ­¢ã—ã¾ã™
+// ï¼ˆï¼’ï¼‰T1.javaãƒ—ãƒ­ã‚°ãƒ©ãƒ ãªã©,åˆ¥ã®ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã‚’ä½¿ã£ã¦Robotã¨åŒã˜åå‰ã§loginã—ã¾ã™
+// ï¼ˆï¼“ï¼‰logoutã—ã¾ã™
+// åˆ¥ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã‹ã‚‰ã®logoutä½œæ¥­ã‚’çœç•¥ã™ã‚‹ã¨,ã‚µãƒ¼ãƒä¸Šã«æƒ…å ±ãŒæ®‹ã£ã¦ã—ã¾ã„ã¾ã™
 
-// ƒ‰ƒCƒuƒ‰ƒŠ‚Ì—˜—p
-import java.net.*;// ƒlƒbƒgƒ[ƒNŠÖ˜A
+// ãƒ©ã‚¤ãƒ–ãƒ©ãƒªã®åˆ©ç”¨
+import java.net.*;// ãƒãƒƒãƒˆãƒ¯ãƒ¼ã‚¯é–¢é€£
 import java.io.*;
 import java.util.*;
 
-// RobotƒNƒ‰ƒX
+// Robotã‚¯ãƒ©ã‚¹
 public class Robot2 {
 	enum Dir{RIGHT, DOWN, LEFT, UP, NONE}
-	// ƒƒ{ƒbƒg‚Ì“®ìƒ^ƒCƒ~ƒ“ƒO‚ğ‹K’è‚·‚é•Ï”sleeptime
+	// ãƒ­ãƒœãƒƒãƒˆã®å‹•ä½œã‚¿ã‚¤ãƒŸãƒ³ã‚°ã‚’è¦å®šã™ã‚‹å¤‰æ•°sleeptime
 	private int sleeptime = 510;
-	// ƒƒ{ƒbƒg‚ªlogout‚·‚é‚Ü‚Å‚ÌŠÔ‚ğ‹K’è‚·‚é•Ï”timeTolive
+	// ãƒ­ãƒœãƒƒãƒˆãŒlogoutã™ã‚‹ã¾ã§ã®æ™‚é–“ã‚’è¦å®šã™ã‚‹å¤‰æ•°timeTolive
 	int timeTolive = 50 ;
 
 	private String name;
-	// Ÿ‚ÌXV‚ÌˆÚ“®
+	// æ¬¡ã®æ›´æ–°æ™‚ã®ç§»å‹•
 	private Dir[] nextMove = new Dir[2];
 	private int my_x, my_y;
 
-	private static Vector<int[]> energy_v; // ”R—¿ƒ^ƒ“ƒN‚ÌˆÊ’uî•ñƒŠƒXƒg
+	private static Vector<int[]> energy_v; // ç‡ƒæ–™ã‚¿ãƒ³ã‚¯ã®ä½ç½®æƒ…å ±ãƒªã‚¹ãƒˆ
 	private static Hashtable<String, Ship> userTable = null;
 	private io.sugar6400.Admiral admiral;
 
-	// ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	// ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	public Robot2 (String[] args)
 	{
 		userTable = new Hashtable<>();
@@ -101,7 +101,7 @@ public class Robot2 {
 			case 15:
 				return new Dir[]{Dir.UP, Dir.UP};
 			default:
-				System.out.println("Error: •s³‚Èaction: " + action);
+				System.out.println("Error: ä¸æ­£ãªaction: " + action);
 				return null;
 		}
 	}
@@ -130,31 +130,31 @@ public class Robot2 {
 		if(nextMove[0] != Dir.NONE || nextMove[1] != Dir.NONE)
 			out.flush();
 
-		// ƒT[ƒo‚ÉstatƒRƒ}ƒ“ƒh‚ğ‘—•t‚µ,”Õ–Ê‚Ì—lq‚È‚Ç‚Ìî•ñ‚ğ“¾‚Ü‚·
+		// ã‚µãƒ¼ãƒã«statã‚³ãƒãƒ³ãƒ‰ã‚’é€ä»˜ã—,ç›¤é¢ã®æ§˜å­ãªã©ã®æƒ…å ±ã‚’å¾—ã¾ã™
 		out.println("stat");
 		out.flush();
 
 		try {
-			String line = in.readLine();// ƒT[ƒo‚©‚ç‚Ì“ü—Í‚Ì“Ç‚İ‚İ
+			String line = in.readLine();// ã‚µãƒ¼ãƒã‹ã‚‰ã®å…¥åŠ›ã®èª­ã¿è¾¼ã¿
 
-			//ship_info‚©‚çn‚Ü‚é‘D‚Ìî•ñ‚Ìæ“ªs‚ğ’T‚µ‚Ü‚·
+			//ship_infoã‹ã‚‰å§‹ã¾ã‚‹èˆ¹ã®æƒ…å ±ã®å…ˆé ­è¡Œã‚’æ¢ã—ã¾ã™
 			while (!"ship_info".equalsIgnoreCase(line))
 				line = in.readLine();
 
-			// ‘D‚Ìî•ñship_info‚Ì•\¦
-			// ship_info‚ÍƒsƒŠƒIƒh‚Ì‚İ‚Ìs‚ÅI—¹‚Å‚·
+			// èˆ¹ã®æƒ…å ±ship_infoã®è¡¨ç¤º
+			// ship_infoã¯ãƒ”ãƒªã‚ªãƒ‰ã®ã¿ã®è¡Œã§çµ‚äº†ã§ã™
 			line = in.readLine();
 			while (!".".equals(line)){
 				StringTokenizer st = new StringTokenizer(line);
-				// –¼‘O‚ğ“Ç‚İæ‚è‚Ü‚·
+				// åå‰ã‚’èª­ã¿å–ã‚Šã¾ã™
 				String obj_name = st.nextToken().trim();
 
-				// ‘D‚ÌˆÊ’uÀ•W‚ğ“Ç‚İæ‚è‚Ü‚·
+				// èˆ¹ã®ä½ç½®åº§æ¨™ã‚’èª­ã¿å–ã‚Šã¾ã™
 				int x = Integer.parseInt(st.nextToken()) ;
 				int y = Integer.parseInt(st.nextToken()) ;
 				int point = Integer.parseInt(st.nextToken()) ;
 
-				// ‘Dˆê——‚É“o˜^
+				// èˆ¹ä¸€è¦§ã«ç™»éŒ²
 				if(userTable.containsKey(obj_name)){
 					userTable.get(obj_name).x = x;
 					userTable.get(obj_name).y = y;
@@ -163,39 +163,39 @@ public class Robot2 {
 					userTable.put(obj_name, new Ship(x, y, point));
 				}
 
-				// ©•ª‚Ì‘D‚È‚ç
+				// è‡ªåˆ†ã®èˆ¹ãªã‚‰
 				if(obj_name.equals(name)){
 					my_x = x;
 					my_y = y;
 				}
-				// Ÿ‚Ì‚Ps‚ğ“Ç‚İæ‚è‚Ü‚·
+				// æ¬¡ã®ï¼‘è¡Œã‚’èª­ã¿å–ã‚Šã¾ã™
 				line = in.readLine();
 			}
 
-			// energy_info‚©‚çn‚Ü‚é,”R—¿ƒ^ƒ“ƒN‚Ìî•ñ‚ğ‘Ò‚¿ó‚¯‚Ü‚·
+			// energy_infoã‹ã‚‰å§‹ã¾ã‚‹,ç‡ƒæ–™ã‚¿ãƒ³ã‚¯ã®æƒ…å ±ã‚’å¾…ã¡å—ã‘ã¾ã™
 			while (!"energy_info".equalsIgnoreCase(line))
 				line = in.readLine();
 
 			energy_v.clear();
-			// ”R—¿ƒ^ƒ“ƒN‚Ìî•ñenergy_info‚Ì•\¦
-			// energy_info‚ÍƒsƒŠƒIƒh‚Ì‚İ‚Ìs‚ÅI—¹‚Å‚·
+			// ç‡ƒæ–™ã‚¿ãƒ³ã‚¯ã®æƒ…å ±energy_infoã®è¡¨ç¤º
+			// energy_infoã¯ãƒ”ãƒªã‚ªãƒ‰ã®ã¿ã®è¡Œã§çµ‚äº†ã§ã™
 			line = in.readLine();
 			while (!".".equals(line)){
 				StringTokenizer st = new StringTokenizer(line);
 
-				// ”R—¿ƒ^ƒ“ƒN‚ÌˆÊ’uÀ•W‚ğ“Ç‚İæ‚è‚Ü‚·
+				// ç‡ƒæ–™ã‚¿ãƒ³ã‚¯ã®ä½ç½®åº§æ¨™ã‚’èª­ã¿å–ã‚Šã¾ã™
 				int x   = Integer.parseInt(st.nextToken()) ;
 				int y   = Integer.parseInt(st.nextToken()) ;
 				int ene = Integer.parseInt(st.nextToken()) ;
 				int[] e = new int[4];
-				// ƒGƒlƒ‹ƒM[ˆê——‚É“o˜^
+				// ã‚¨ãƒãƒ«ã‚®ãƒ¼ä¸€è¦§ã«ç™»éŒ²
 				e[0] = x;
 				e[1] = y;
 				e[2] = ene;
-				// 1,2,3,4‚Ì‚Ç‚ê‚Å‚àŠ„‚èØ‚ê‚é”12 -> •K‚¸®”‚É
+				// 1,2,3,4ã®ã©ã‚Œã§ã‚‚å‰²ã‚Šåˆ‡ã‚Œã‚‹æ•°12 -> å¿…ãšæ•´æ•°ã«
 				energy_v.addElement(e);
 
-				// Ÿ‚Ì‚Ps‚ğ“Ç‚İæ‚è‚Ü‚·
+				// æ¬¡ã®ï¼‘è¡Œã‚’èª­ã¿å–ã‚Šã¾ã™
 				line = in.readLine();
 			}
 		}catch (Exception e){
@@ -204,24 +204,24 @@ public class Robot2 {
 		}
 	}
 
-	// loginŠÖ˜A‚ÌƒIƒuƒWƒFƒNƒg
-	Socket server;// ƒQ[ƒ€ƒT[ƒo‚Æ‚ÌÚ‘±ƒ\ƒPƒbƒg
-	int port = 10000;// Ú‘±ƒ|[ƒg
-	BufferedReader in;// “ü—ÍƒXƒgƒŠ[ƒ€
-	PrintWriter out;// o—ÍƒXƒgƒŠ[ƒ€
+	// loginé–¢é€£ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
+	Socket server;// ã‚²ãƒ¼ãƒ ã‚µãƒ¼ãƒã¨ã®æ¥ç¶šã‚½ã‚±ãƒƒãƒˆ
+	int port = 10000;// æ¥ç¶šãƒãƒ¼ãƒˆ
+	BufferedReader in;// å…¥åŠ›ã‚¹ãƒˆãƒªãƒ¼ãƒ 
+	PrintWriter out;// å‡ºåŠ›ã‚¹ãƒˆãƒªãƒ¼ãƒ 
 
-	// loginƒƒ\ƒbƒh
-	// ƒT[ƒo‚Ö‚Ìloginˆ—‚ğs‚¢‚Ü‚·
+	// loginãƒ¡ã‚½ãƒƒãƒ‰
+	// ã‚µãƒ¼ãƒã¸ã®loginå‡¦ç†ã‚’è¡Œã„ã¾ã™
 	void login(String host, String name){
 		try {
-			// ƒT[ƒo‚Æ‚ÌÚ‘±
+			// ã‚µãƒ¼ãƒã¨ã®æ¥ç¶š
 			this.name = name;
 			server = new Socket(host, port);
 			in = new BufferedReader(new InputStreamReader(
 			  server.getInputStream()));
 			out = new PrintWriter(server.getOutputStream());
 
-			// loginƒRƒ}ƒ“ƒh‚Ì‘—•t
+			// loginã‚³ãƒãƒ³ãƒ‰ã®é€ä»˜
 			out.println("login " + name);
 			out.flush();
 		}catch(Exception e){
@@ -233,14 +233,14 @@ public class Robot2 {
 }
 
 class Ship {
-	// ‘D‚ÌˆÊ’uÀ•W
+	// èˆ¹ã®ä½ç½®åº§æ¨™
 	public int x;
 	public int y;
-	// Šl“¾‚µ‚½”R—¿ƒ^ƒ“ƒN‚ÌŒÂ”
+	// ç²å¾—ã—ãŸç‡ƒæ–™ã‚¿ãƒ³ã‚¯ã®å€‹æ•°
 	public int point = 0;
 
-	// ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-	// ‰ŠúˆÊ’u‚ğƒZƒbƒg‚µ‚Ü‚·
+	// ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	// åˆæœŸä½ç½®ã‚’ã‚»ãƒƒãƒˆã—ã¾ã™
 	public Ship(int x, int y, int point){
 		this.x = x;
 		this.y = y;
